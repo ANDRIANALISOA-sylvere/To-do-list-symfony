@@ -1,0 +1,581 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppController!
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('home.css')}}">
+{% endblock %}
+{% block body %}
+	<div class="container mt-5">
+		<div class="row">
+			{% for message in app.flashes('success') %}
+				<div class="alert alert-success">
+					{{ message }}
+				</div>
+			{% endfor %}
+			{# Nouvelle Tache #}
+			<div class="col-md-3">
+				<div class="card" style="background: rgb(245, 245, 245)">
+					<div class="card-header">
+						<b>Nouvelle tâche</b>
+					</div>
+					<div class="card-body">
+						{{ form_start(tache,{attr:{novalidate:'novalidate'}}) }}
+						<div>
+							{{ form_widget(tache.titre) }}
+							<div class="form-error">
+								{{ form_errors(tache.titre) }}
+							</div>
+							{{ form_widget(tache.description) }}
+							<div class="form-error">
+								{{ form_errors(tache.description) }}
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary btn-sm" style="float: right">
+							Valider
+						</button>
+						{{ form_end(tache) }}
+
+					</div>
+				</div>
+				{# Supprimer #}
+				<div class="card mt-5 mb-2" style="background: rgb(245, 245, 245)">
+					<div class="card-header">
+						<b>Les Tachês supprimés</b>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>Gestion de RH
+								<i class="fas fa-minus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev symfony
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Tache
+							</button>
+						</div>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>Gestion de RH
+								<i class="fas fa-minus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev symfony
+							</button>
+				<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Tache
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Tache
+							</button>
+						</div>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>Gestion de RH
+								<i class="fas fa-minus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev symfony
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Tache
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Tache
+							</button>
+						</div>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>Gestion de RH
+								<i class="fas fa-minus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev symfony
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+						</div>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>Gestion de RH
+								<i class="fas fa-minus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+							<button class="btn btn-sm btn-danger m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev symfony
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+										--bs-btn-padding-y: 0.25rem;
+										--bs-btn-padding-x: 0.5rem;
+										--bs-btn-font-size: 0.75rem;
+										">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-danger m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Tache
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{# Tache fini #}
+			<div class="col-md-3">
+				<div class="card" style="background: rgb(245, 245, 245)">
+					<div class="card-header">
+						<b>Les Tachês terminés</b>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>Gestion de RH
+								<i class="fas fa-plus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev symfony
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+					<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+						</div>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>Gestion de RH
+								<i class="fas fa-plus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev symfony
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+						</div>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>Gestion de RH
+								<i class="fas fa-plus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev symfony
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+										--bs-btn-padding-y: 0.25rem;
+										--bs-btn-padding-x: 0.5rem;
+										--bs-btn-font-size: 0.75rem;
+										">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-success m-1" style="
+								--bs-btn-padding-y: 0.25rem;
+								--bs-btn-padding-x: 0.5rem;
+								--bs-btn-font-size: 0.75rem;
+								">
+								Tache
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{# En cours #}
+			<div class="col-md-3">
+				<div class="card" style="background: rgb(245, 245, 245)">
+					<div class="card-header">
+						<b>Les Tachês en Cours</b>
+					</div>
+					<div>
+						<div class="card-title text-center mt-2">
+							<b>
+								<input type="checkbox" name="" id="" class="form-check-input me-2"/>
+								Gestion de RH
+								<i class="fas fa-plus-circle me-2 mt-1" style="cursor: pointer; float: right"></i>
+							</b>
+						</div>
+						<div class="card-body border m-3" style="background: white">
+							<button class="btn btn-sm btn-primary m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev symfony
+							</button>
+							<button class="btn btn-sm btn-primary m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Java
+							</button>
+							<button class="btn btn-sm btn-primary m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+							<button class="btn btn-sm btn-primary m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Dev Python
+							</button>
+							<button class="btn btn-sm btn-primary m-1" style="
+									--bs-btn-padding-y: 0.25rem;
+									--bs-btn-padding-x: 0.5rem;
+									--bs-btn-font-size: 0.75rem;
+									">
+								Tache
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{# A realiser #}
+			<div class="col-md-3 mb-3">
+				<div class="card" style="background: rgb(245, 245, 245)">
+					<div class="card-header">
+						<b>Les Tachês à réaliser</b>
+					</div>
+					{% for tache in taches %}
+						<div>
+							<div class="card-title text-center mt-2">
+								<b>{{ tache.titre|upper }}
+								</b>
+								<a href="{{ path('app_remove',{id:tache.id}) }}">
+									<i class="fas fa-minus-circle me-2 mt-1 text-danger" style="cursor: pointer; float: right"></i>
+								</a>
+								<i class="fas fa-plus-circle  text-primary me-2 mt-1" style="cursor: pointer; float: right" data-bs-toggle="modal" data-bs-target="#addsoustache{{ loop.index }}"></i><br>
+								{# modal add soustache #}
+								<div class="modal fade" id="addsoustache{{ loop.index }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header border-bottom" style="background: rgb(245, 245, 245);">
+												<h1 class="modal-title fs-5" id="exampleModalLabel">
+													<b>
+														Sous tache de "
+														{{ tache.titre }}"</b>
+												</h1>
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-6">
+														<img src="{{ asset('images/calendar.svg') }}" alt="" width="100%" height="100%">
+													</div>
+													<div class="col-md-6">
+														<p>Les sous taches existants:</p>
+														{% for soustache in soustaches %}
+															{% if tache.id==soustache.tache.id %}
+																<span class="badge bg-success">
+																	{{ soustache.titre }}
+																</span>
+															{% endif %}
+														{% endfor %}
+													</div>
+												</div>
+												<div class="row mt-4">
+													<div class="col-md-10">
+														<div class="form-group">
+															<input type="text" class="form-control" placeholder="Ajouter une sous-tache">
+														</div>
+													</div>
+													<div class="col-md-2">
+														<button type="submit" class="btn btn-primary btn-sm mt-1">Ajouter</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<small>{{ tache.description }}</small>
+							</div>
+							{% if tache.sousTaches|length == 0 %}
+								<p class="text-danger text-center">
+									<b>Aucun sous-tache</b>
+								</p>
+							{% else %}
+								<div class="card-body border m-3" style="background: white">
+									{% for soustache in soustaches %}
+										{% if tache.id==soustache.tache.id %}
+											<button class="btn btn-sm btn-warning m-1" style="
+																																																                  --bs-btn-padding-y: 0.25rem;
+																																																                  --bs-btn-padding-x: 0.5rem;
+																																																                  --bs-btn-font-size: 0.75rem;
+																																																                " data-bs-toggle="modal" data-bs-target="#aboutsoustache{{ loop.index0 }}">
+												{{ soustache.titre }}
+											</button>
+											<div class="modal fade" id="aboutsoustache{{ loop.index0 }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header border-bottom" style="background: rgb(245, 245, 245);">
+															<h1 class="modal-title fs-5" id="exampleModalLabel">
+																<b>{{ soustache.titre }}</b>
+															</h1>
+															<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="row">
+																<div class="col-md-4 mt-4">
+																	<img src="{{ asset('images/calendar.svg') }}" alt="" width="100%" height="100%">
+																</div>
+																<div class="col-md-6">
+																	<p class="text-center">Les descriptions:</p>
+
+																</div>
+															</div>
+															<div class="row mt-4">
+																<div class="col-md-10">
+																	<div class="form-group">
+																		<input type="text" class="form-control" placeholder="Ajouter une description">
+																	</div>
+																</div>
+																<div class="col-md-2">
+																	<button type="submit" class="btn btn-primary btn-sm mt-1">Ajouter</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										{% endif %}
+									{% endfor %}
+								</div>
+							{% endif %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
